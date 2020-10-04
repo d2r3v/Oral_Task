@@ -11,7 +11,7 @@ public class Q1 {
         int s=sc.nextInt();
         if(s<=26&&s>=1)
         {
-            int [] a= new int [s1.length()];
+            int [] a= new int [s1.length()+1];
             for(int i =0;i<s1.length();i++)
 
             {
@@ -20,13 +20,26 @@ public class Q1 {
                     continue;
                 }
                 else{
+
                 int temp=s1.charAt(i);
-                temp=temp-s;
-                a[i]=temp;
+                temp=temp+s;
+
+                if(temp>90)
+                {
+                    temp=temp-26;
+                    a[i]=temp;
+                }
+                else
+                {
+                    a[i]=temp;
+                }
+
             }}
+            a[s1.length()]=32;
+
             for(int x =0;x<s1.length();x++)
             {
-                if(a[x]==a[x+1])
+                if(a[x]==a[x+1]&&a[x]=='Q')
                 {
                     System.out.print(" ");
                     x++;
